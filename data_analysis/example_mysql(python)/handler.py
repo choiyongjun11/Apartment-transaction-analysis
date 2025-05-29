@@ -1,4 +1,4 @@
-from db import Query
+from date_analysis.example_mysql.db import Query
 
 class Handler(Query):
     def create_AptTransaction_2024_preprocessed(self):
@@ -38,5 +38,5 @@ class Handler(Query):
         self.insert(table='AptTransaction_2024_preprocessed', columns=['year', 'sigungu, bunji', 'main_num', 'sub_num', 'apt_name', 'area', 'contract_ym', 'contract_day', 'price', 'dong', 'floor','buyer', 'seller', 'build_year', 'road_name', 'cancel_date', 'deal_type', 'realtor_area','registry_date','apt_type','source_id'],
                         values=[f"'{year}'",f"'{sigungu}'",f"'{bunji}'",f"'{main_num}'",f"'{sub_num}'",f"'{apt_name}'",f"'{area: float}'",f"'{contract_ym}'",f"'{contract_day}'",f"'{price}'",f"'{dong}'",f"'{floor}'",f"'{buyer}'",f"'{seller}'",f"'{build_year}'",f"'{road_name}'",f"'{cancel_date}'",f"'{deal_type}'",f"'{realtor_area}'",f"'{registry_date}'",f"'{apt_type}'",f"'{source_id}'"])
 						
-    def delete_scenario(self, year: int):
+    def delete_year(self, year: int):
         self.delete(table='AptTransaction_2024_preprocessed', where=[f"year={year}"])
