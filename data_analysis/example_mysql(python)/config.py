@@ -1,4 +1,4 @@
-CSIV = {
+Apartment = {
     'HOST' : 'localhost',
     'USER' : '[mysqlid]',
     'PASSWD' : '[mysqlpasswd]',
